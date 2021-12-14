@@ -27,6 +27,11 @@
         </div>
         <div class="saludando">
             <h3 id="saludo"></h3>
+            <input type="number" placeholder="HH" value="" id="hh" />
+            <input type="number" placeholder="MM" value="" id="mm" />
+            <input type="number" placeholder="SS" value="" id="ss" />
+            <input type="button" value="Enter Time" onclick="enterTime(1)" />
+            <input type="button" value="Reset" onclick="enterTime(0)" />
         </div>
         <div class="sum_and_rest_count">
         </div>
@@ -40,8 +45,9 @@
             </p>
             <p>:</p>
             <p id="include_cero_seg"></p>
-            <p id="clock_nuclear_seg">00
+            <p value="" id="clock_nuclear_seg">00
             </p>
+            <num id="num_hour"></num>
         </div>
     </div>
     <script src="app.js"></script>
