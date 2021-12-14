@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contador</title>
+    <link href="style.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet"> -->
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="nav">
+            <h1>HYPER ROLEX</h1>
+        </div>
+        <div class="clock_simple">
+            <p id="clock_simple">
+            </p>
+        </div>
+        <div class="input_count">
+            <input type="text" placeholder="Ingrese su nombre" value="" id="name" />
+            <input type="button" value="SALUDAR" onclick="saludar()" />
+        </div>
+        <div class="saludando">
+            <h3 id="saludo"></h3>
+            <input type="number" placeholder="HH" value="" id="hh" />
+            <input type="number" placeholder="MM" value="" id="mm" />
+            <input type="number" placeholder="SS" value="" id="ss" />
+            <input type="button" value="Enter Time" onclick="setInt_simple(1)" />
+            <input type="button" value="Reset" onclick="setInt_simple(0)" />
+        </div>
+        <div class="sum_and_rest_count">
+        </div>
+        <div id="clock_nuclear">
+            <p id="include_cero_hour"></p>
+            <p id="clock_nuclear_hour">00
+            </p>
+            <p>:</p>
+            <p id="include_cero_min"></p>
+            <p id="clock_nuclear_min">00
+            </p>
+            <p>:</p>
+            <p id="include_cero_seg"></p>
+            <p value="" id="clock_nuclear_seg">00
+            </p>
+            <num id="num_hour"></num>
+        </div>
+    </div>
+    <script src="app_setInt_simple.js"></script>
+</body>
+
+</html>
