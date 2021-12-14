@@ -1,0 +1,73 @@
+.nav {
+    color: rgba(3, 0, 5, 0.808);
+    background-color: rgba(228, 109, 11, 0.329);
+    border-radius: 4px;
+    font-family: monospace;
+    text-align: center;
+    padding: 20px;
+}
+
+.nav h1 {
+    font-size: 40px;
+}
+
+.saludando {
+    color: rgba(3, 0, 5, 0.808);
+    background-color: rgba(11, 228, 47, 0.144);
+    border-radius: 4px;
+    font-family: monospace;
+    text-align: center;
+    height: 70px;
+    padding: 40px;
+}
+
+.input_count {
+    height: 40px;
+    padding: 10px;
+}
+
+.saludando h3 {
+    background-color: rgba(188, 143, 143, 0.055);
+    border-radius: 4px;
+    font-size: 30px;
+}
+
+.clock_simple {
+    color: rgba(3, 0, 5, 0.808);
+    background-color: rgba(220, 130, 11, 0.329);
+    border-radius: 2px;
+    font-family: monospace;
+    text-align: center;
+    padding: 10px;
+}
+
+#clock_simple {
+    font-size: 30px;
+}
+
+#clock_nuclear {
+    display:flex;
+    flex-wrap: wrap;    
+    justify-content: center;
+    font-family: monospace;
+    font-size: 50px;
+}
+
+#clock_nuclear_hour {
+    background-color: #f1f1f16b;
+}
+#include_cero_hour {
+    background-color: #f1f1f16b;
+}
+#clock_nuclear_min {
+    background-color: #b105050e;
+}
+#include_cero_min {
+    background-color: #b1050515;
+}
+#include_cero_seg {
+    background-color: #0cda1618;
+}
+#clock_nuclear_seg {
+    background-color: #0cda1610;
+}
