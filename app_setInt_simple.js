@@ -33,74 +33,67 @@ function armarSaludo(name) {
 // ------>>>>>  MI RELOJ NUCLEAR <<<<<<<------
 // ------>>>>>  MY ROLEX NUCLEAR <<<<<<<------
 
+let time;
+let cancel = 1;
 
-function setInt_simple(cancel) {
+function breackTime (cancel) {
+    cancel = 0;
     if(cancel == 0) {
         console.log("Cancelado");
         document.getElementById("hh").value = 00;
         document.getElementById("mm").value = 00;
         document.getElementById("ss").value = 00;
-        document.getElementById("clock_nuclear_seg").innerText = 00;
-        document.getElementById("clock_nuclear_min").innerText = 00;
-        document.getElementById("clock_nuclear_hour").innerText = 00;
+        document.getElementById("clock_nuclear_seg").innerText = "00";
+        document.getElementById("clock_nuclear_min").innerText = "00";
+        document.getElementById("clock_nuclear_hour").innerText = "00";
         return clearInterval(time);
-    } else {
+    }
+};
 
-    var time = function () {
+function setInt_simple() {
+    
+    // if (cancel == 1) {
         let hh = document.getElementById("hh").value;
         let mm = document.getElementById("mm").value;
         let ss = document.getElementById("ss").value;
         const pSeg = document.getElementById("clock_nuclear_seg");
-        const itemCero_seg = document.getElementById("include_cero_seg");
+        // const itemCero_seg = document.getElementById("include_cero_seg");
         let count = ss;
         console.log('eeeee',count);
-        pSeg.innerText = count;
-
+        pSeg.innerText = "0" + count;
 
         const pMin = document.getElementById("clock_nuclear_min");
-        const itemCero_min = document.getElementById("include_cero_min");
+        // const itemCero_min = document.getElementById("include_cero_min");
         let count_min = mm;
-        pMin.innerText = count_min;
+        pMin.innerText = "0" + count_min;
 
         const pHour = document.getElementById("clock_nuclear_hour");
-        const itemCero = document.getElementById("include_cero_seg");
-        let count_hour = hh;
+        // const itemCero = document.getElementById("include_cero_seg");
+        let count_hour = "0" + hh;
         pHour.innerText = count_hour;
 
-        setInterval(function () {
-            if (count < 60) {
+        time = setInterval(function () {
+            if (count < 59) {
             count = parseInt(count) + 1;
             console.log(count);
-            pSeg.innerText = count;
-            } else {
-                count = 0;
-                pSeg.innerText = count;
+            return count > 9 ? pSeg.innerText = count : pSeg.innerText = "0" + count;
             }
         }, 1000);
         setInterval(function () {
             if (count_min < 59) {
                 count_min = parseInt(count_min) + 1;
                 console.log(count_min);
-                return pMin.innerText = count_min;
-                } else {
-                    count_min = 0;
-                    return pMin.innerText = count_min;
-                }
+                return count_min > 9 ? pMin.innerText = count_min : pMin.innerText = "0" + count_min;
+                } 
         }, 60000);
         setInterval(function () {
             if (count_hour < 23) {
                 count_hour = parseInt(count_hour) + 1;
                 console.log(count_hour);
-                return pHour.innerText = count_hour;
-                } else {
-                    count_hour = 0;
-                    return pHour.innerText = count_hour;
-                }
+                return count_hour > 9 ? pHour.innerText = count_hour : pHour.innerText = "0" + count_hour;
+                } 
         }, 3600000);
-    }
-    time();
- }
-};
+    };
 
 
 

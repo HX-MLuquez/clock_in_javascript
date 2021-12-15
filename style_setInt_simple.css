@@ -71,3 +71,19 @@
 #clock_nuclear_seg {
     background-color: #0cda1610;
 }
+
+#hh {
+    background-color: #f1f1f16b;
+    height: 40px;
+    width: 40px;
+}
+#mm {
+    background-color: #f1f1f16b;
+    height: 40px;
+    width: 40px;
+}
+#ss {
+    background-color: #f1f1f16b;
+    height: 40px;
+    width: 40px;
+}
