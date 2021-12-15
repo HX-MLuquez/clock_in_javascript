@@ -36,9 +36,9 @@ function armarSaludo(name) {
 let time;
 let cancel = 1;
 
-function breackTime (cancel) {
+function breackTime(cancel) {
     cancel = 0;
-    if(cancel == 0) {
+    if (cancel == 0) {
         console.log("Cancelado");
         document.getElementById("hh").value = 00;
         document.getElementById("mm").value = 00;
@@ -51,162 +51,56 @@ function breackTime (cancel) {
 };
 
 function setInt_simple() {
-    
+
     // if (cancel == 1) {
-        let hh = document.getElementById("hh").value;
-        let mm = document.getElementById("mm").value;
-        let ss = document.getElementById("ss").value;
-        const pSeg = document.getElementById("clock_nuclear_seg");
-        // const itemCero_seg = document.getElementById("include_cero_seg");
-        let count = ss;
-        console.log('eeeee',count);
-        pSeg.innerText = "0" + count;
+    let hh = document.getElementById("hh").value;
+    let mm = document.getElementById("mm").value;
+    let ss = document.getElementById("ss").value;
+    const pSeg = document.getElementById("clock_nuclear_seg");
+    // const itemCero_seg = document.getElementById("include_cero_seg");
+    let count = ss;
+    console.log('eeeee', count);
+    pSeg.innerText = ("0" + count).slice(-2);
 
-        const pMin = document.getElementById("clock_nuclear_min");
-        // const itemCero_min = document.getElementById("include_cero_min");
-        let count_min = mm;
-        pMin.innerText = "0" + count_min;
+    const pMin = document.getElementById("clock_nuclear_min");
+    // const itemCero_min = document.getElementById("include_cero_min");
+    let count_min = mm;
+    pMin.innerText = ("0" + count_min).slice(-2);
+    
 
-        const pHour = document.getElementById("clock_nuclear_hour");
-        // const itemCero = document.getElementById("include_cero_seg");
-        let count_hour = "0" + hh;
-        pHour.innerText = count_hour;
+    const pHour = document.getElementById("clock_nuclear_hour");
+    // const itemCero = document.getElementById("include_cero_seg");
+    let count_hour = hh;
+    pHour.innerText = ("0" + count_hour).slice(-2);
+    
 
-        time = setInterval(function () {
-            if (count < 59) {
+    time = setInterval(function () {
+        if (count < 59) {
             count = parseInt(count) + 1;
             console.log(count);
-            return count > 9 ? pSeg.innerText = count : pSeg.innerText = "0" + count;
-            }
-        }, 1000);
-        setInterval(function () {
-            if (count_min < 59) {
+            count > 9 ? pSeg.innerText = count : pSeg.innerText = "0" + count;
+        }
+        else if (count == 59) {
+            count = 0;
+            pSeg.innerText = "0" + count;
+            if (count == 0 && count_min < 59) {
                 count_min = parseInt(count_min) + 1;
                 console.log(count_min);
-                return count_min > 9 ? pMin.innerText = count_min : pMin.innerText = "0" + count_min;
-                } 
-        }, 60000);
-        setInterval(function () {
-            if (count_hour < 23) {
-                count_hour = parseInt(count_hour) + 1;
-                console.log(count_hour);
-                return count_hour > 9 ? pHour.innerText = count_hour : pHour.innerText = "0" + count_hour;
-                } 
-        }, 3600000);
-    };
+                count_min > 9 ? pMin.innerText = count_min : pMin.innerText = "0" + count_min;
+            } else if (count_min == 59) {
+                count_min = 0;
+                pMin.innerText = "0" + count_min;
+                if (count_min == 0 && count_hour < 23) {
+                    count_hour = parseInt(count_hour) + 1;
+                    console.log(count_hour);
+                    count_hour > 9 ? pHour.innerText = count_hour : pHour.innerText = "0" + count_hour;
+                } else if (count_hour == 59) {
+                    count_hour = 0;
+                    pHour.innerText = "0" + count_hour;
+                }
+            }
+        }
 
+    }, 1000);
+};
 
-
-
-
-// function setInt_simple() {
-//     var time = function () {
-//         let hh = document.getElementById("hh").value;
-//         let mm = document.getElementById("mm").value;
-//         let ss = document.getElementById("ss").value;
-//         const pSeg = document.getElementById("clock_nuclear_seg");
-//         const itemCero_seg = document.getElementById("include_cero_seg");
-//         let count = 0;
-
-//         const pMin = document.getElementById("clock_nuclear_min");
-//         const itemCero_min = document.getElementById("include_cero_min");
-//         let count_min = 0;
-
-//         const pHour = document.getElementById("clock_nuclear_hour");
-//         const itemCero = document.getElementById("include_cero_seg");
-//         let count_hour = 0;
-
-//         setInterval(function () {
-//             if (count < 59) {
-//             count = count + 1;
-//             console.log(count);
-//             return pSeg.innerText = count;
-//             } else {
-//                 count = 0;
-//                 return pSeg.innerText = count;
-//             }
-//         }, 1000);
-//         setInterval(function () {
-//             if (count_min < 59) {
-//                 count_min = count_min + 1;
-//                 console.log(count_min);
-//                 return pMin.innerText = count_min;
-//                 } else {
-//                     count_min = 0;
-//                     return pMin.innerText = count_min;
-//                 }
-//         }, 60000);
-//         setInterval(function () {
-//             if (count_hour < 23) {
-//                 count_hour = count_hour + 1;
-//                 console.log(count_hour);
-//                 return pHour.innerText = count_hour;
-//                 } else {
-//                     count_hour = 0;
-//                     return pHour.innerText = count_hour;
-//                 }
-//         }, 3600000);
-//     }
-//     time();
-// };
-
-
-// //     if (cancel == 0) {
-// //         console.log("Cancel");
-        
-// //     } else {
-// //         let hh = document.getElementById("hh").value;
-// //         let mm = document.getElementById("mm").value;
-// //         let ss = document.getElementById("ss").value;
-// //         // console.log('sssss    esssss_______', ss);
-
-// //         var timeNuclear = function () {
-// //             setInterval(function () {
-// //                 console.log('sssss    esssss_______', ss);
-// //                 const pTime = document.getElementById("clock_nuclear_seg");
-// //                 const itemCero = document.getElementById("include_cero_seg");
-// //                 pTime.textContent = pTime.textContent.replace(/\d+/, function (digit) { // replace the digit with the result of the function  con expresiones regulares
-// //                     let results_seg = (parseInt(digit, 10) + 1) % 60;
-// //                     results_seg = results_seg * ss;
-// //                     ss = 1;
-// //                     return results_seg > 9 ? results_seg : '0' + results_seg;
-// //                 });
-// //             }, 1000);
-// //             setInterval(function () {
-// //                 const pTime = document.getElementById("clock_nuclear_min");
-// //                 const itemCero = document.getElementById("include_cero_min");
-// //                 pTime.textContent = pTime.textContent.replace(/\d+/, function (digit) {
-// //                     let results_min = (parseInt(digit, 10) + 1) % 60;
-// //                     return results_min > 9 ? results_min : '0' + results_min;
-// //                 });
-
-// //                 console.log("queeeeeee");
-// //             }, 60000);
-// //             setInterval(function () {
-// //                 const pTime = document.getElementById("clock_nuclear_hour");
-// //                 const itemCero = document.getElementById("include_cero_hour");
-// //                 pTime.textContent = pTime.textContent.replace(/\d+/, function (digit) {
-// //                     let results_hour = (parseInt(digit, 10) + 1) % 24;
-// //                     return results_hour > 9 ? results_hour : '0' + results_hour;
-// //                 });
-// //                 console.log("quuaaaaaaaaaaaaaaa");
-// //             }, 3600000);
-// //         }
-// //         timeNuclear();
-// //         // setInterval(timeClock, 1000);
-
-// //     }
-// // }
-
-// // function resetTime() {
-// //     // clearInterval(enterTime());
-// //     const pTime = document.getElementById("clock_nuclear_seg");
-// //     const itemCero = document.getElementById("include_cero_seg");
-// //     pTime.textContent = "00";
-// //     const pTime2 = document.getElementById("clock_nuclear_min");
-// //     const itemCero2 = document.getElementById("include_cero_min");
-// //     pTime2.textContent = "00";
-// //     const pTime3 = document.getElementById("clock_nuclear_hour");
-// //     const itemCero3 = document.getElementById("include_cero_hour");
-// //     pTime3.textContent = "00";
-// // }
