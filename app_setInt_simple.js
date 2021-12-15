@@ -17,17 +17,24 @@ function armarSaludo(name) {
     return saludo;
 
 };
-(function () {
-    var timeClock = function clockSimple() {
+
+let timeClock;
+
+function Start(){
+    timeClock = setInterval(function(){
+        let clockSimple = function clockSimple() {
         const time = new Date();
         const pClock = document.getElementById("clock_simple");
         const date = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
         pClock.innerText = date;
     }
-    timeClock();
-    // setInterval(timeClock, 1000);
-})();
-
+    clockSimple();
+},1000)
+};
+function Pause () {
+    console.log("Pause");
+    return clearInterval(timeClock);
+};
 
 
 // ------>>>>>  MI RELOJ NUCLEAR <<<<<<<------
