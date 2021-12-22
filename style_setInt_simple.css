@@ -17,8 +17,7 @@
     border-radius: 4px;
     font-family: monospace;
     text-align: center;
-    height: 70px;
-    padding: 40px;
+    padding: 10px;
 }
 
 .input_count {
@@ -30,6 +29,7 @@
     background-color: rgba(188, 143, 143, 0.055);
     border-radius: 4px;
     font-size: 30px;
+    margin-top: -4px;
 }
 
 .clock_simple {
